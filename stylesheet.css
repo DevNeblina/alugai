@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "fontmenu";
+    src: url(src/fonts/BlackOpsOne-Regular.ttf);
+}
+
+* {
+ margin: 0 auto;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(199, 203, 206);
+}
+
+.header {
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    margin: 5px;
+    display: flex
+  }
+
+.logo-header {
+ width: 75px;
+ height: 75px;
+ margin: 10px;
+}
+
+.menu-header ul {
+  display: flex;
+  list-style-type: none;
+  margin-top: 7px;
+}
+
+.menu-header ul li {
+  margin: 10px;
+  font-size: 15px;
+  font-family: fontmenu;
+}
+
+.menu-header ul li a {
+  text-decoration: none;
+  color: rgb(7, 7, 7);
+  display: inline-block;
+  padding: 20px;
+  transition: background .6s;
+}
+
+.menu-header ul li a:hover {
+  background-color: rgb(44, 184, 68);
+  border-radius: 10px;
+}
+
