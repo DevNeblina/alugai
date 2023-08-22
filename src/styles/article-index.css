@@ -3,7 +3,9 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    background-color:azure
+    background-color:azure;
+    padding: 15px;
+   
 }
 
 .container-images {
@@ -11,14 +13,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 400px;
+    width: 600px;  
+}
+
+.container-images img {
+    max-height: 100%;
+    max-width: 100%; 
 }
 
 .slider {
     opacity: 0;
     position: absolute;
     width: 100%;
-    
+    max-width: 100%;
 }
  
 .on {
