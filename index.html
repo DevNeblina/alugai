@@ -6,8 +6,10 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="src/styles/reset.css">
-	<link rel="stylesheet" href="src/styles/header.css" />
+	<link rel="stylesheet" href="src/styles/header-index.css" />
+	<link rel="stylesheet" href="src/styles/article-index.css" />
 	<link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon">
+	<script src="./src/scrips/index.js"></script>
 	<title>Alugaí</title>
 
 </head>
@@ -33,6 +35,25 @@
 		<a class="botao-login" href="#"> Entrar </a>
 
 	</header>
+    
+	<article class="article-index" >
+       
+		<div class="container-slider">
+			<button id="prev-button"> <img src="src/img/arrow.png" alt="prev-button"> </button>
+			
+			<div class="container-images"> <!--Carrosel index-->
+				
+				<img src="src/img/index-carrosel/vista-casa1.jpeg" alt="img-carrosel"  class="slider,on">
+				<img src="src/img/index-carrosel/vista-entrada.jpg" alt="img-carrosel" class="slider">
+				<img src="src/img/index-carrosel/vista-piscina.jpg" alt="img-carrosel" class="slider">
+				<img src="src/img/index-carrosel/vista-redes.jpg" alt="img-carrosel" class="slider">
+				
+			</div>
+			
+			<button id="next-button"> <img src="src/img/arrow.png" alt="next-button">  </button>
+		</div>
+			
+	</article>
 
 </body>
 
