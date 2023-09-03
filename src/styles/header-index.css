@@ -39,7 +39,7 @@
 }
 
 .menu-header ul li a:hover {
-	background-color: rgb(44, 184, 68);
+	background-color: rgba(31, 146, 112, 0.979);
 }
 
 .botao-login {
@@ -47,7 +47,7 @@
 	font-weight: 900;
 	font-size: 20px;
 	padding: 20px;
-	background-color: rgb(96, 204, 172);
+	background-color: rgba(31, 146, 112, 0.979);
 	border-radius: 15px;
 	text-shadow: 0px 4px 15px  black;
 }
