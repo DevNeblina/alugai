@@ -3,12 +3,6 @@
 	src: url(../fonts/Raleway-VariableFont_wght.ttf);
 }
 
-body {
-	background-color: rgb(96, 204, 172);
-	max-width: 1820px;
-	margin: 0 auto
-}
-
 .header {
 	background-color: rgb(255, 255, 255);
 	border-radius: 25px;
