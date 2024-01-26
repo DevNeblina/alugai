@@ -1,0 +1,27 @@
+body {
+	background-color: rgba(71, 187, 143, 0.993);
+	max-width: 1820px;
+	margin: 0 auto
+}
+
+.form-contact {
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+	margin-left: 1%;
+	margin-top: 1%;	
+}
+
+.container-contact {
+	display: flex;
+	
+}
+
+.contacts {
+	margin: 5px 25px 0px 25px;
+	background-color: aqua;
+	width: 65%;
+	display: flex;
+	justify-content: center;
+	
+}
