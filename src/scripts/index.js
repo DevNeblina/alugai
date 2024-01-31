@@ -1,39 +1,81 @@
-const slider = document.querySelectorAll('.slider')
+const primarySlider = document.querySelectorAll('.primary-slider')
+const primaryBtnPrev = document.getElementById('primary-prev-button')
+const primaryBtnNext = document.getElementById('primary-next-button')
 
-const btPrev1 = document.getElementById('prev-button')
-const btNext1 = document.getElementById('next-button')
+const secondarySlider = document.querySelectorAll('.secondary-slider')
+const secondaryBtnPrev = document.getElementById('secondary-prev-button')
+const secondaryBtnNext = document.getElementById('secondary-next-button')
 
-let currentslide = 0;
 
-function hideslider() {
-    slider.forEach(item => item.classList.remove('on'))
+let currentPrimarySlide = 0
+let currentSecondarySlide = 0
+
+function hideSlide(slider, currentSlide) {
+    slider[currentSlide].classList.remove("on");
 }
 
-function showslider() {
-    slider[currentslide].classList.add('on')
+function showSlider(slider, currentSlide) {
+    slider[currentSlide].classList.add('on');
 }
 
-function nextSlider(){
-    hideslider()
-    if(currentslide == slider.length ){
-        currentslide = 0
-    } else {
-        currentslide ++
+function checkSlideLimit(e, slider, target) {
+    const primaryBtnDisabled = document.querySelector(".primary.button-disable")
+    if (target === 'primary-slide') {
+        if (currentPrimarySlide === 0 || currentPrimarySlide === slider.length - 1) {
+            e.target.classList.add("button-disable")
+        }
+        if (primaryBtnDisabled !== null) {
+            primaryBtnDisabled.classList.remove("button-disable")
+        }
     }
-    showslider()
-}
-
-function prevSlider() {
-    hideslider()
-    if(currentslide == 0){
-        currentslide = slider.length 
-    } else {
-        currentslide --
+    
+    const secondaryBtnDisabled = document.querySelector(".secondary.button-disable")
+    if (target === 'secondary-slide') {
+        if (currentSecondarySlide === 0 || currentSecondarySlide === slider.length - 1) {
+            e.target.classList.add("button-disable")
+        }
+        if (secondaryBtnDisabled !== null) {
+            secondaryBtnDisabled.classList.remove("button-disable")
+        }
     }
-    showslider()
 }
 
-btNext1.addEventListener('click', nextSlider)
-btPrev1.addEventListener('click', prevSlider)
+function nextSlider(e) {
+    const idButton = e.target.nextSibling.parentElement.id
 
-console.log(slider)
+    if (idButton === 'primary-next-button') {
+        hideSlide(primarySlider, currentPrimarySlide)
+        currentPrimarySlide++
+        showSlider(primarySlider, currentPrimarySlide)
+        checkSlideLimit(e, primarySlider, "primary-slide")
+
+    } else if (idButton === 'secondary-next-button') {
+        hideSlide(secondarySlider, currentSecondarySlide)
+        currentSecondarySlide++
+        showSlider(secondarySlider, currentSecondarySlide)
+        checkSlideLimit(e, secondarySlider, "secondary-slide")
+    }
+}
+
+function prevSlider(e) {
+    const idButton = e.target.nextSibling.parentElement.id
+
+    if (idButton === 'primary-prev-button') {
+        hideSlide(primarySlider, currentPrimarySlide)
+        currentPrimarySlide--
+        showSlider(primarySlider, currentPrimarySlide)
+        checkSlideLimit(e, primarySlider, "primary-slide")
+
+    } else if (idButton === 'secondary-prev-button') {
+        hideSlide(secondarySlider, currentSecondarySlide)
+        currentSecondarySlide--
+        showSlider(secondarySlider, currentSecondarySlide)
+        checkSlideLimit(e, secondarySlider, "secondary-slide")
+    }
+}
+
+primaryBtnNext.addEventListener('click', e => nextSlider(e))
+primaryBtnPrev.addEventListener('click', e => prevSlider(e))
+
+secondaryBtnNext.addEventListener('click', e => nextSlider(e))
+secondaryBtnPrev.addEventListener('click', e => prevSlider(e))
