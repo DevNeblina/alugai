@@ -1,3 +1,13 @@
+body {
+	background-color: rgba(71, 187, 143, 0.993);
+	max-width: 1820px;
+	margin: 0 auto
+}
+
+.main {
+    border-radius: 10px;
+}
+
 .container-slider {
     display: flex;
     align-items: center;
